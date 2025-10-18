@@ -9,6 +9,9 @@ module Bookshelf
 		expose :books do |page:, per_page:|
 			book_repo.all_by_title(page:, per_page:)
 		end
+
+		expose :page
+		expose :per_page
       end
     end
   end

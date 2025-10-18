@@ -5,3 +5,9 @@
     <li><%= book[:title] %>, by <%= book[:author] %></li>
   <% end %>
 </ul>
+<% if page.to_i > 1 %>
+  <a href="/books?page=<%= page.to_i - 1 %>&per_page=<%= per_page %>">< Previous</a>
+<% end %>
+<% if books.size == per_page.to_i %>
+  <a href="/books?page=<%= page.to_i + 1 %>&per_page=<%= per_page %>">More ></a>
+<% end %>
